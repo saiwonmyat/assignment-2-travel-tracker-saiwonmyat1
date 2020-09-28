@@ -22,14 +22,32 @@ def run_tests():
     print("Test adding new place:")
     place_collection.add_place(Place("Smithfield", "Australia", 5, False))
     print(place_collection)
+    assert place_collection.places
 
     # Test sorting places
     print("Test sorting - priority:")
     place_collection.sort("priority")
     print(place_collection)
+
+    assert place_collection.places
+    print("Test sorting - name:")
+    place_collection.sort("name")
+    print(place_collection)
+    assert place_collection.places
+    print("Test sorting - country:")
+    place_collection.sort("country")
+    print(place_collection)
+    assert place_collection.places
+
+
+
     # TODO: Add more sorting tests
 
     # TODO: Test saving places (check CSV file manually to see results)
+    print("Test saving places:")
+    place_collection.save_places('place.csv')
+    print(place_collection)
+    assert place_collection.places
 
     # TODO: Add more tests, as appropriate, for each method
 
